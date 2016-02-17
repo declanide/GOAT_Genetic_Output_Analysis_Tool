@@ -128,7 +128,7 @@ def manhattan( s, t ):
                                 # CREATE MANHATTAN PLOT
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
     source = ColumnDataSource(f_data)                    # SOURCE DATA FOR BOKEH PLOT
-    TOOLS = [HoverTool(tooltips=[("SNP", "@rs_id_assoc"),("P-value","@pvalue_assoc")]), TapTool()]
+    TOOLS = [HoverTool(tooltips=[("SNP", "@rs_id_assoc"),("Gene", "@gene"),("P-value","@pvalue_assoc")]), TapTool()]
     plot = figure(tools=["box_zoom", "box_select", "wheel_zoom", TOOLS[0], "crosshair", "reset", "save", TOOLS[1]] , x_axis_label='Chromosomes', y_axis_label='-log10(p)', plot_width=900, plot_height=500,y_range=(2.0,max_v+3))
     plot.circle('position', 'odd', source=source, size=3)
     plot.circle('position', 'even', source=source, size=3, color="black")

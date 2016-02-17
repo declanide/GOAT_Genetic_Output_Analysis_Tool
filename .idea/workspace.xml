@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdd213aa-d227-4546-9df2-86ed40b4768b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py" afterPath="$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py" />
     </list>
     <ignored path="GOAT_Genetic_Ouput_Analysis_Tool.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,13 +44,21 @@
     <favorites_list name="GOAT_Genetic_Ouput_Analysis_Tool" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30706522">
-              <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
-              <folding />
+            <state vertical-scroll-proportion="0.7336956">
+              <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+              <folding>
+                <marker date="1455725383000" expanded="true" signature="4420:4669" placeholder="select p.nom... marqueurs" />
+                <marker date="1455725383000" expanded="true" signature="4733:4980" placeholder="select p.nom... marqueurs" />
+                <marker date="1455725383000" expanded="true" signature="5050:5377" placeholder="select DISTI... marqueurs" />
+                <marker date="1455725383000" expanded="true" signature="5447:5769" placeholder="select DISTI... marqueurs" />
+                <marker date="1455725383000" expanded="true" signature="14080:14486" placeholder="select disti... assoc" />
+                <marker date="1455725383000" expanded="true" signature="15518:15739" placeholder="select m.nom... marqueurs" />
+                <marker date="1455725383000" expanded="true" signature="49299:49717" placeholder="select disti... assoc" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,8 +130,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -151,12 +158,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="biomarqueurs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GOAT_Genetic_Ouput_Analysis_Tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GOAT_Genetic_Output_Analysis_Tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="GOAT_Genetic_Ouput_Analysis_Tool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,7 +467,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="729" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="729" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5904685" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -487,6 +510,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/biomarqueurs/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -764,18 +795,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
+    <entry file="file://$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032051284">
-          <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+        <state vertical-scroll-proportion="4.4836955">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py">
+    <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30706522">
-          <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
-          <folding />
+        <state vertical-scroll-proportion="0.7336956">
+          <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+          <folding>
+            <marker date="1455725383000" expanded="true" signature="4420:4669" placeholder="select p.nom... marqueurs" />
+            <marker date="1455725383000" expanded="true" signature="4733:4980" placeholder="select p.nom... marqueurs" />
+            <marker date="1455725383000" expanded="true" signature="5050:5377" placeholder="select DISTI... marqueurs" />
+            <marker date="1455725383000" expanded="true" signature="5447:5769" placeholder="select DISTI... marqueurs" />
+            <marker date="1455725383000" expanded="true" signature="14080:14486" placeholder="select disti... assoc" />
+            <marker date="1455725383000" expanded="true" signature="15518:15739" placeholder="select m.nom... marqueurs" />
+            <marker date="1455725383000" expanded="true" signature="49299:49717" placeholder="select disti... assoc" />
+          </folding>
         </state>
       </provider>
     </entry>
