@@ -1,0 +1,1305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Django default" uuid="6436e764-be4b-4335-b337-5b85acd26a35">
+    <database-info product="MySQL" version="5.6.29" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="hits-of-opti-tera"/>
+      <table id="2" parent="1" name="GeneQuery_searchgene"/>
+      <table id="3" parent="1" name="affy_s_rs"/>
+      <table id="4" parent="1" name="assoc">
+        <comment>table de resultats</comment>
+      </table>
+      <table id="5" parent="1" name="auth_group"/>
+      <table id="6" parent="1" name="auth_group_permissions"/>
+      <table id="7" parent="1" name="auth_permission"/>
+      <table id="8" parent="1" name="auth_user"/>
+      <table id="9" parent="1" name="auth_user_groups"/>
+      <table id="10" parent="1" name="auth_user_user_permissions"/>
+      <table id="11" parent="1" name="covariate"/>
+      <table id="12" parent="1" name="dataset"/>
+      <table id="13" parent="1" name="django_admin_log"/>
+      <table id="14" parent="1" name="django_content_type"/>
+      <table id="15" parent="1" name="django_migrations"/>
+      <table id="16" parent="1" name="django_session"/>
+      <table id="17" parent="1" name="experiment">
+        <comment>Une table de traçabilitée</comment>
+      </table>
+      <table id="18" parent="1" name="genes"/>
+      <table id="19" parent="1" name="hg_rs_history"/>
+      <table id="20" parent="1" name="marq_gene"/>
+      <table id="21" parent="1" name="marqueurs"/>
+      <table id="22" parent="1" name="person"/>
+      <table id="23" parent="1" name="person_dataset"/>
+      <table id="24" parent="1" name="phen_id_val"/>
+      <table id="25" parent="1" name="phenotypes"/>
+      <table id="26" parent="1" name="previous_gene_hugo"/>
+      <table id="27" parent="1" name="synonym_gene_hugo"/>
+      <table id="28" parent="1" name="users"/>
+      <column id="29" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="30" parent="2" name="rs_ID">
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="31" parent="2" name="gene">
+        <data-type>varchar(300)</data-type>
+      </column>
+      <column id="32" parent="2" name="threshold">
+        <data-type>double</data-type>
+      </column>
+      <column id="33" parent="2" name="chromosome">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="34" parent="2" name="pos">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="35" parent="2" name="phenotype">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="36" parent="2" name="allele_A">
+        <data-type>varchar(1)</data-type>
+      </column>
+      <column id="37" parent="2" name="allele_B">
+        <data-type>varchar(1)</data-type>
+      </column>
+      <column id="38" parent="2" name="pvalue_assoc">
+        <data-type>double</data-type>
+      </column>
+      <column id="39" parent="2" name="beta_assoc">
+        <data-type>double</data-type>
+      </column>
+      <column id="40" parent="2" name="maf">
+        <data-type>double</data-type>
+      </column>
+      <column id="41" parent="2" name="imputed">
+        <data-type>double</data-type>
+      </column>
+      <column id="42" parent="2" name="cohort_AA">
+        <data-type>double</data-type>
+      </column>
+      <column id="43" parent="2" name="cohort_AB">
+        <data-type>double</data-type>
+      </column>
+      <column id="44" parent="2" name="cohort_BB">
+        <data-type>double</data-type>
+      </column>
+      <column id="45" parent="2" name="patent">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="46" parent="2" name="covariate">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="47" parent="2" name="direction">
+        <data-type>varchar(1)</data-type>
+      </column>
+      <column id="48" parent="2" name="se_assoc">
+        <data-type>double</data-type>
+      </column>
+      <column id="49" parent="2" name="cases_AA">
+        <data-type>double</data-type>
+      </column>
+      <column id="50" parent="2" name="cases_AB">
+        <data-type>double</data-type>
+      </column>
+      <column id="51" parent="2" name="cases_BB">
+        <data-type>double</data-type>
+      </column>
+      <column id="52" parent="2" name="controls_AA">
+        <data-type>double</data-type>
+      </column>
+      <column id="53" parent="2" name="controls_AB">
+        <data-type>double</data-type>
+      </column>
+      <column id="54" parent="2" name="controls_BB">
+        <data-type>double</data-type>
+      </column>
+      <column id="55" parent="2" name="allele_A_freq">
+        <data-type>double</data-type>
+      </column>
+      <column id="56" parent="2" name="allele_B_freq">
+        <data-type>double</data-type>
+      </column>
+      <column id="57" parent="2" name="cases_maf">
+        <data-type>double</data-type>
+      </column>
+      <column id="58" parent="2" name="controls_maf">
+        <data-type>double</data-type>
+      </column>
+      <column id="59" parent="2" name="miss_dat_prop">
+        <data-type>double</data-type>
+      </column>
+      <column id="60" parent="2" name="cohort_hwe">
+        <data-type>double</data-type>
+      </column>
+      <column id="61" parent="2" name="cases_hwe">
+        <data-type>double</data-type>
+      </column>
+      <column id="62" parent="2" name="controls_hwe">
+        <data-type>double</data-type>
+      </column>
+      <column id="63" parent="2" name="het_OR">
+        <data-type>double</data-type>
+      </column>
+      <column id="64" parent="2" name="het_OR_lower">
+        <data-type>double</data-type>
+      </column>
+      <column id="65" parent="2" name="het_OR_upper">
+        <data-type>double</data-type>
+      </column>
+      <column id="66" parent="2" name="all_OR">
+        <data-type>double</data-type>
+      </column>
+      <column id="67" parent="2" name="all_OR_lower">
+        <data-type>double</data-type>
+      </column>
+      <column id="68" parent="2" name="all_OR_upper">
+        <data-type>double</data-type>
+      </column>
+      <key id="69" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="70" parent="3" name="id_s">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="71" parent="3" name="id_rs">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="72" parent="3" name="affy_5">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="73" parent="3" name="affy_6">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="74" parent="3" name="PRIMARY">
+        <columns>id_s</columns>
+        <primary>1</primary>
+      </key>
+      <column id="75" parent="4" name="idassoc">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20) unsigned</data-type>
+      </column>
+      <column id="76" parent="4" name="experiment">
+        <comment>Un id vers une table de</comment>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="77" parent="4" name="rs_id_assoc">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="78" parent="4" name="chromosome">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="79" parent="4" name="pos">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="80" parent="4" name="allele_A">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="81" parent="4" name="allele_B">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="82" parent="4" name="av_max_post_call">
+        <data-type>float</data-type>
+      </column>
+      <column id="83" parent="4" name="info_imp">
+        <data-type>float</data-type>
+      </column>
+      <column id="84" parent="4" name="cohort_AA">
+        <data-type>float</data-type>
+      </column>
+      <column id="85" parent="4" name="cohort_AB">
+        <data-type>float</data-type>
+      </column>
+      <column id="86" parent="4" name="cohort_BB">
+        <data-type>float</data-type>
+      </column>
+      <column id="87" parent="4" name="cohort_NULL">
+        <data-type>float</data-type>
+      </column>
+      <column id="88" parent="4" name="cases_AA">
+        <data-type>float</data-type>
+      </column>
+      <column id="89" parent="4" name="cases_AB">
+        <data-type>float</data-type>
+      </column>
+      <column id="90" parent="4" name="cases_BB">
+        <data-type>float</data-type>
+      </column>
+      <column id="91" parent="4" name="controls_AA">
+        <data-type>float</data-type>
+      </column>
+      <column id="92" parent="4" name="controls_AB">
+        <data-type>float</data-type>
+      </column>
+      <column id="93" parent="4" name="controls_BB">
+        <data-type>float</data-type>
+      </column>
+      <column id="94" parent="4" name="allele_A_freq">
+        <data-type>float</data-type>
+      </column>
+      <column id="95" parent="4" name="allele_B_freq">
+        <data-type>float</data-type>
+      </column>
+      <column id="96" parent="4" name="maf">
+        <data-type>float</data-type>
+      </column>
+      <column id="97" parent="4" name="cases_maf">
+        <data-type>float</data-type>
+      </column>
+      <column id="98" parent="4" name="controls_maf">
+        <data-type>float</data-type>
+      </column>
+      <column id="99" parent="4" name="miss_dat_prop">
+        <data-type>float</data-type>
+      </column>
+      <column id="100" parent="4" name="cohort_hwe">
+        <data-type>double unsigned</data-type>
+      </column>
+      <column id="101" parent="4" name="cases_hwe">
+        <data-type>double unsigned</data-type>
+      </column>
+      <column id="102" parent="4" name="controls_hwe">
+        <data-type>double unsigned</data-type>
+      </column>
+      <column id="103" parent="4" name="het_OR">
+        <data-type>float</data-type>
+      </column>
+      <column id="104" parent="4" name="het_OR_lower">
+        <data-type>float</data-type>
+      </column>
+      <column id="105" parent="4" name="het_OR_upper">
+        <data-type>float</data-type>
+      </column>
+      <column id="106" parent="4" name="hom_OR">
+        <data-type>float</data-type>
+      </column>
+      <column id="107" parent="4" name="hom_OR_lower">
+        <data-type>float</data-type>
+      </column>
+      <column id="108" parent="4" name="hom_OR_upper">
+        <data-type>float</data-type>
+      </column>
+      <column id="109" parent="4" name="all_OR">
+        <data-type>float</data-type>
+      </column>
+      <column id="110" parent="4" name="all_OR_lower">
+        <data-type>float</data-type>
+      </column>
+      <column id="111" parent="4" name="all_OR_upper">
+        <data-type>float</data-type>
+      </column>
+      <column id="112" parent="4" name="pvalue_assoc">
+        <data-type>double unsigned</data-type>
+      </column>
+      <column id="113" parent="4" name="info_assoc">
+        <data-type>float</data-type>
+      </column>
+      <column id="114" parent="4" name="beta_assoc">
+        <data-type>float</data-type>
+      </column>
+      <column id="115" parent="4" name="se_assoc">
+        <data-type>float</data-type>
+      </column>
+      <index id="116" parent="4" name="fk_assoc_1_idx">
+        <columns>experiment</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="117" parent="4" name="fk_assoc_4">
+        <columns>rs_id_assoc</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="118" parent="4" name="fk_assoc_5">
+        <columns>rs_id_assoc
+experiment</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="119" parent="4" name="PRIMARY">
+        <columns>idassoc</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="120" parent="4" name="fk_assoc_1">
+        <columns>experiment</columns>
+        <ref-key>~.experiment.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="121" parent="4" name="fk_assoc_4">
+        <columns>rs_id_assoc</columns>
+        <ref-key>hits-of-opti-tera.marqueurs(nom)</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="122" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="123" parent="5" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(80)</data-type>
+      </column>
+      <index id="124" parent="5" name="name">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="125" parent="5" name="name">
+        <columns>name</columns>
+        <underlying-index>name</underlying-index>
+      </key>
+      <key id="126" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="127" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="128" parent="6" name="group_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="129" parent="6" name="permission_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="130" parent="6" name="auth_group__permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id">
+        <columns>permission_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="131" parent="6" name="group_id">
+        <columns>group_id
+permission_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="132" parent="6" name="group_id">
+        <columns>group_id
+permission_id</columns>
+        <underlying-index>group_id</underlying-index>
+      </key>
+      <key id="133" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="134" parent="6" name="auth_group_permission_group_id_689710a9a73b7457_fk_auth_group_id">
+        <columns>group_id</columns>
+        <ref-key>~.auth_group.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="135" parent="6" name="auth_group__permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id">
+        <columns>permission_id</columns>
+        <ref-key>~.auth_permission.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="136" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="137" parent="7" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="138" parent="7" name="content_type_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="139" parent="7" name="codename">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="140" parent="7" name="content_type_id">
+        <columns>content_type_id
+codename</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="141" parent="7" name="content_type_id">
+        <columns>content_type_id
+codename</columns>
+        <underlying-index>content_type_id</underlying-index>
+      </key>
+      <key id="142" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="143" parent="7" name="auth__content_type_id_508cf46651277a81_fk_django_content_type_id">
+        <columns>content_type_id</columns>
+        <ref-key>~.django_content_type.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="144" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="145" parent="8" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(128)</data-type>
+      </column>
+      <column id="146" parent="8" name="last_login">
+        <data-type>datetime(6)</data-type>
+      </column>
+      <column id="147" parent="8" name="is_superuser">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="148" parent="8" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="149" parent="8" name="first_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="150" parent="8" name="last_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="151" parent="8" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(254)</data-type>
+      </column>
+      <column id="152" parent="8" name="is_staff">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="153" parent="8" name="is_active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="154" parent="8" name="date_joined">
+        <mandatory>1</mandatory>
+        <data-type>datetime(6)</data-type>
+      </column>
+      <index id="155" parent="8" name="username">
+        <columns>username</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="156" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="157" parent="8" name="username">
+        <columns>username</columns>
+        <underlying-index>username</underlying-index>
+      </key>
+      <column id="158" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="159" parent="9" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="160" parent="9" name="group_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="161" parent="9" name="auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id">
+        <columns>group_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="162" parent="9" name="user_id">
+        <columns>user_id
+group_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="163" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="164" parent="9" name="user_id">
+        <columns>user_id
+group_id</columns>
+        <underlying-index>user_id</underlying-index>
+      </key>
+      <foreign-key id="165" parent="9" name="auth_user_groups_group_id_33ac548dcf5f8e37_fk_auth_group_id">
+        <columns>group_id</columns>
+        <ref-key>~.auth_group.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="166" parent="9" name="auth_user_groups_user_id_4b5ed4ffdb8fd9b0_fk_auth_user_id">
+        <columns>user_id</columns>
+        <ref-key>~.auth_user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="167" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="168" parent="10" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="169" parent="10" name="permission_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="170" parent="10" name="auth_user_u_permission_id_384b62483d7071f0_fk_auth_permission_id">
+        <columns>permission_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="171" parent="10" name="user_id">
+        <columns>user_id
+permission_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="172" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="173" parent="10" name="user_id">
+        <columns>user_id
+permission_id</columns>
+        <underlying-index>user_id</underlying-index>
+      </key>
+      <foreign-key id="174" parent="10" name="auth_user_user_permissi_user_id_7f0938558328534a_fk_auth_user_id">
+        <columns>user_id</columns>
+        <ref-key>~.auth_user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="175" parent="10" name="auth_user_u_permission_id_384b62483d7071f0_fk_auth_permission_id">
+        <columns>permission_id</columns>
+        <ref-key>~.auth_permission.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="176" parent="11" name="idcovariate">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="177" parent="11" name="idexperiment">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="178" parent="11" name="idphenotypes">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="179" parent="11" name="fk_covariate_1_idx">
+        <columns>idexperiment</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="180" parent="11" name="fk_covariate_2_idx">
+        <columns>idphenotypes</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="181" parent="11" name="PRIMARY">
+        <columns>idcovariate</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="182" parent="11" name="fk_covariate_1">
+        <columns>idexperiment</columns>
+        <ref-key>~.experiment.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="183" parent="11" name="fk_covariate_2">
+        <columns>idphenotypes</columns>
+        <ref-key>~.phenotypes.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="184" parent="12" name="iddataset">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="185" parent="12" name="name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="186" parent="12" name="description_dataset">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="187" parent="12" name="cohort">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="188" parent="12" name="cohort_description">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="189" parent="12" name="build_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="190" parent="12" name="PRIMARY">
+        <columns>iddataset</columns>
+        <primary>1</primary>
+      </key>
+      <column id="191" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="192" parent="13" name="action_time">
+        <mandatory>1</mandatory>
+        <data-type>datetime(6)</data-type>
+      </column>
+      <column id="193" parent="13" name="object_id">
+        <data-type>longtext</data-type>
+      </column>
+      <column id="194" parent="13" name="object_repr">
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="195" parent="13" name="action_flag">
+        <mandatory>1</mandatory>
+        <data-type>smallint(5) unsigned</data-type>
+      </column>
+      <column id="196" parent="13" name="change_message">
+        <mandatory>1</mandatory>
+        <data-type>longtext</data-type>
+      </column>
+      <column id="197" parent="13" name="content_type_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="198" parent="13" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="199" parent="13" name="django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="200" parent="13" name="djang_content_type_id_697914295151027a_fk_django_content_type_id">
+        <columns>content_type_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="201" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="202" parent="13" name="django_admin_log_user_id_52fdd58701c5f563_fk_auth_user_id">
+        <columns>user_id</columns>
+        <ref-key>~.auth_user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="203" parent="13" name="djang_content_type_id_697914295151027a_fk_django_content_type_id">
+        <columns>content_type_id</columns>
+        <ref-key>~.django_content_type.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="204" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="205" parent="14" name="app_label">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="206" parent="14" name="model">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="207" parent="14" name="django_content_type_app_label_45f3b1d93ec8c61c_uniq">
+        <columns>app_label
+model</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="208" parent="14" name="django_content_type_app_label_45f3b1d93ec8c61c_uniq">
+        <columns>app_label
+model</columns>
+        <underlying-index>django_content_type_app_label_45f3b1d93ec8c61c_uniq</underlying-index>
+      </key>
+      <key id="209" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="210" parent="15" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="211" parent="15" name="app">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="212" parent="15" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="213" parent="15" name="applied">
+        <mandatory>1</mandatory>
+        <data-type>datetime(6)</data-type>
+      </column>
+      <key id="214" parent="15" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="215" parent="16" name="session_key">
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="216" parent="16" name="session_data">
+        <mandatory>1</mandatory>
+        <data-type>longtext</data-type>
+      </column>
+      <column id="217" parent="16" name="expire_date">
+        <mandatory>1</mandatory>
+        <data-type>datetime(6)</data-type>
+      </column>
+      <index id="218" parent="16" name="django_session_de54fa62">
+        <columns>expire_date</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="219" parent="16" name="PRIMARY">
+        <columns>session_key</columns>
+        <primary>1</primary>
+      </key>
+      <column id="220" parent="17" name="idexperiment">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="221" parent="17" name="idusers">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="222" parent="17" name="date_exp">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="223" parent="17" name="version_script">
+        <data-type>decimal(10)</data-type>
+      </column>
+      <column id="224" parent="17" name="verstion_algo">
+        <data-type>decimal(10)</data-type>
+      </column>
+      <column id="225" parent="17" name="post_process">
+        <data-type>text</data-type>
+      </column>
+      <column id="226" parent="17" name="note">
+        <data-type>longtext</data-type>
+      </column>
+      <column id="227" parent="17" name="dataset">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="228" parent="17" name="phenotype">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="229" parent="17" name="covariates">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="230" parent="17" name="experiment_approved">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <index id="231" parent="17" name="fk_assoc_2">
+        <columns>dataset</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="232" parent="17" name="fk_assoc_3">
+        <columns>phenotype</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="233" parent="17" name="fk_experiment_1_idx">
+        <columns>idusers</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="234" parent="17" name="PRIMARY">
+        <columns>idexperiment</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="235" parent="17" name="fk_assoc_2">
+        <columns>dataset</columns>
+        <ref-key>~.dataset.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="236" parent="17" name="fk_assoc_3">
+        <columns>phenotype</columns>
+        <ref-key>~.phenotypes.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="237" parent="17" name="fk_experiment_1">
+        <columns>idusers</columns>
+        <ref-key>~.users.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="238" parent="18" name="idgenes">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="239" parent="18" name="symbol">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="240" parent="18" name="approved">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="241" parent="18" name="type">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="242" parent="18" name="longname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(250)</data-type>
+      </column>
+      <column id="243" parent="18" name="note">
+        <data-type>text</data-type>
+      </column>
+      <index id="244" parent="18" name="symbol_idx">
+        <columns>symbol</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="245" parent="18" name="PRIMARY">
+        <columns>idgenes</columns>
+        <primary>1</primary>
+      </key>
+      <column id="246" parent="19" name="idhg_rs_history">
+        <comment>Table pour la traduction</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="247" parent="19" name="rsHigh">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="248" parent="19" name="rsLow">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="249" parent="19" name="build_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="250" parent="19" name="orien">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <column id="251" parent="19" name="create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="252" parent="19" name="last_updated_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="253" parent="19" name="rsCurrent">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="254" parent="19" name="orien2Current">
+        <data-type>tinyint(1)</data-type>
+      </column>
+      <key id="255" parent="19" name="PRIMARY">
+        <columns>idhg_rs_history</columns>
+        <primary>1</primary>
+      </key>
+      <column id="256" parent="20" name="idmarq_gene">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="257" parent="20" name="idmarqueurs">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="258" parent="20" name="nom">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="259" parent="20" name="build_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="260" parent="20" name="idgenes">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="261" parent="20" name="symbol">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="262" parent="20" name="pos">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="263" parent="20" name="dist">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="264" parent="20" name="strand">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="265" parent="20" name="anot">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="266" parent="20" name="fk_marq_gene_1">
+        <columns>idmarqueurs</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="267" parent="20" name="fk_marq_gene_1_idx">
+        <columns>idgenes</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="268" parent="20" name="marqueur_idx_3">
+        <columns>nom
+build_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="269" parent="20" name="PRIMARY">
+        <columns>idmarq_gene</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="270" parent="20" name="fk_marq_gene_1">
+        <columns>idmarqueurs</columns>
+        <ref-key>~.marqueurs.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="271" parent="20" name="fk_marq_gene_2">
+        <columns>idgenes</columns>
+        <ref-key>~.genes.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="272" parent="21" name="idmarqueurs">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="273" parent="21" name="nom">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="274" parent="21" name="sorte">
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <column id="275" parent="21" name="chromosome">
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <column id="276" parent="21" name="position">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="277" parent="21" name="build_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="278" parent="21" name="remapped_from_hg18">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="279" parent="21" name="refNCBI">
+        <data-type>varchar(5)</data-type>
+      </column>
+      <column id="280" parent="21" name="observed">
+        <data-type>varchar(5)</data-type>
+      </column>
+      <column id="281" parent="21" name="classe">
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="282" parent="21" name="func">
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="283" parent="21" name="frame">
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="284" parent="21" name="codons">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="285" parent="21" name="peptides">
+        <data-type>varchar(5)</data-type>
+      </column>
+      <column id="286" parent="21" name="gene">
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="287" parent="21" name="gene_strand">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="288" parent="21" name="start_gen">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="289" parent="21" name="end_gen">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="290" parent="21" name="gene_before">
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="291" parent="21" name="gene_before_strand">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="292" parent="21" name="dist_gen_before">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="293" parent="21" name="start_gen_before">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="294" parent="21" name="end_gen_before">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="295" parent="21" name="gene_after">
+        <data-type>varchar(15)</data-type>
+      </column>
+      <column id="296" parent="21" name="gene_after_strand">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="297" parent="21" name="dist_gen_after">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="298" parent="21" name="start_gen_after">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="299" parent="21" name="end_gen_after">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="300" parent="21" name="idgenes">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="301" parent="21" name="geneaf_idx">
+        <columns>gene_after</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="302" parent="21" name="genebe_idx">
+        <columns>gene_before</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="303" parent="21" name="gene_idx">
+        <columns>gene</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="304" parent="21" name="idx_marqueurs_chromosome_position_build_id">
+        <columns>chromosome
+position
+build_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="305" parent="21" name="idx_marqueurs_nom_build_id">
+        <columns>nom
+build_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="306" parent="21" name="idx_marqueurs_chromosome_position_build_id">
+        <columns>chromosome
+position
+build_id</columns>
+        <underlying-index>idx_marqueurs_chromosome_position_build_id</underlying-index>
+      </key>
+      <key id="307" parent="21" name="idx_marqueurs_nom_build_id">
+        <columns>nom
+build_id</columns>
+        <underlying-index>idx_marqueurs_nom_build_id</underlying-index>
+      </key>
+      <key id="308" parent="21" name="PRIMARY">
+        <columns>idmarqueurs</columns>
+        <primary>1</primary>
+      </key>
+      <column id="309" parent="22" name="idperson">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="310" parent="22" name="sex">
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="311" parent="22" name="age">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="312" parent="22" name="dob">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="313" parent="22" name="ethnic_code">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="314" parent="22" name="country_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="315" parent="22" name="region_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="316" parent="22" name="centre_name">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="317" parent="22" name="sample">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="318" parent="22" name="comment">
+        <data-type>text</data-type>
+      </column>
+      <key id="319" parent="22" name="PRIMARY">
+        <columns>idperson</columns>
+        <primary>1</primary>
+      </key>
+      <column id="320" parent="23" name="idperson_dataset">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="321" parent="23" name="idperson">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="322" parent="23" name="iddataset">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="323" parent="23" name="fk_person_dataset_1_idx">
+        <columns>iddataset</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="324" parent="23" name="fk_person_dataset_2_idx">
+        <columns>idperson</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="325" parent="23" name="PRIMARY">
+        <columns>idperson_dataset</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="326" parent="23" name="fk_person_dataset_1">
+        <columns>iddataset</columns>
+        <ref-key>~.dataset.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="327" parent="23" name="fk_person_dataset_2">
+        <columns>idperson</columns>
+        <ref-key>~.person.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="328" parent="24" name="idphen_id_val">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="329" parent="24" name="idphenotypes">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="330" parent="24" name="idperson">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="331" parent="24" name="value">
+        <data-type>float</data-type>
+      </column>
+      <index id="332" parent="24" name="fk_phen_id_val_1_idx">
+        <columns>idperson</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="333" parent="24" name="forkey1_idx">
+        <columns>idphenotypes</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="334" parent="24" name="PRIMARY">
+        <columns>idphen_id_val</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="335" parent="24" name="fk_phen_id_val_1">
+        <columns>idperson</columns>
+        <ref-key>~.person.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="336" parent="24" name="forkey1">
+        <columns>idphenotypes</columns>
+        <ref-key>~.phenotypes.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="337" parent="25" name="idphenotypes">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="338" parent="25" name="nom">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="339" parent="25" name="nom_view">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="340" parent="25" name="description">
+        <data-type>text</data-type>
+      </column>
+      <column id="341" parent="25" name="type">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="342" parent="25" name="querry">
+        <data-type>text</data-type>
+      </column>
+      <column id="343" parent="25" name="covariable_choosing_table">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="344" parent="25" name="characteristic_table">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="345" parent="25" name="Risk_on_rise">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <key id="346" parent="25" name="PRIMARY">
+        <columns>idphenotypes</columns>
+        <primary>1</primary>
+      </key>
+      <column id="347" parent="26" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="348" parent="26" name="symbol">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="349" parent="26" name="approved">
+        <data-type>varchar(250)</data-type>
+      </column>
+      <index id="350" parent="26" name="index_genes">
+        <columns>symbol</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="351" parent="26" name="symbol">
+        <columns>symbol</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="352" parent="26" name="index_genes">
+        <columns>symbol</columns>
+        <underlying-index>index_genes</underlying-index>
+      </key>
+      <key id="353" parent="26" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="354" parent="26" name="symbol">
+        <columns>symbol</columns>
+        <underlying-index>symbol</underlying-index>
+      </key>
+      <column id="355" parent="27" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="356" parent="27" name="symbol">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="357" parent="27" name="approved">
+        <data-type>varchar(250)</data-type>
+      </column>
+      <index id="358" parent="27" name="index_genes">
+        <columns>symbol</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="359" parent="27" name="symbol">
+        <columns>symbol</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="360" parent="27" name="index_genes">
+        <columns>symbol</columns>
+        <underlying-index>index_genes</underlying-index>
+      </key>
+      <key id="361" parent="27" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="362" parent="27" name="symbol">
+        <columns>symbol</columns>
+        <underlying-index>symbol</underlying-index>
+      </key>
+      <column id="363" parent="28" name="idusers">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="364" parent="28" name="nom">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="365" parent="28" name="note">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="366" parent="28" name="PRIMARY">
+        <columns>idusers</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

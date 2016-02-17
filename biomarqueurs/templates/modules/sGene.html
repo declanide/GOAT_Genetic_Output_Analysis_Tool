@@ -1,0 +1,103 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+        <h3 class="title"> Phenotype : </h3>
+
+            <form action="/SGene/" name="view" method=POST class="form-title">
+                {% csrf_token %}
+                <select class="form-control" id="sel1" name="view" onChange="form.submit();">
+                {% for phe in pheno %}
+                    {% if phe in phenotype|safe %}
+                        <option selected="selected">{{ phe }}</option>
+                    {% else %}
+                        <option>{{ phe }}</option>
+                    {% endif %}
+                {% endfor %}
+                </select>
+            </form>
+
+        <div class="graph">
+            {{ div1|safe }}
+            {{ graph|safe }}
+        </div>
+    
+    <div class="table-container">
+        <div id="griddle-basic" class="table-goat"></div>
+    </div>
+
+    <!-- importation json data & creation table with griddle react js -->
+
+    <script>
+        var jsondata = {{ jsonData|safe }};
+
+    </script>
+    <script type="text/jsx">
+        var LinkComponent = React.createClass({
+            handleClick:function(e){
+                $('.areaSelection').children("input[name$='position']").val(this.props.rowData.pos);
+                $('.areaSelection').children("input[name$='chromosome']").val(this.props.rowData.chromosome);
+            },
+            render: function(){
+                url ="javascript:openForm('form-areaSelection')";
+                var boundClick = this.handleClick.bind(this);
+                return <a href={url} onClick={boundClick}>{this.props.data}</a>
+            }
+        });
+
+        var columnMeta = [
+                        {
+                "columnName": "rs_id_assoc",
+                "locked": false,
+                "visible": true,
+                "order": 1
+            },
+            {
+                "columnName": "chromosome",
+                "locked": false,
+                "visible": true,
+                "order": 2
+            },
+            {
+                "columnName": "pos",
+                "locked": false,
+                "visible": true,
+                "customComponent": LinkComponent,
+                "order":3
+            },
+            {
+                "columnName": "pvalue_assoc",
+                "locked": false,
+                "visible": true,
+                "order": 4
+            },
+            {
+                "columnName": "gene_before",
+                "locked": false,
+                "visible": true,
+                "order": 5
+            },
+            {
+                "columnName": "gene",
+                "locked": false,
+                "visible": true,
+                "order": 6
+            },
+                            {
+                "columnName": "gene_after",
+                "locked": false,
+                "visible": true,
+                "order": 7
+            }
+        ]
+
+
+        React.render(
+            <Griddle results={jsondata} useGriddleStyles={false} resultsPerPage={5} enableInfiniteScroll={true} bodyHeight={400} showSettings={true} showFilter={true} columnMetadata={columnMeta}/>,
+            document.getElementById('griddle-basic')
+            );
+
+        $('input[name="filter"]').val("{{gene|safe}}");
+    </script>
+
+{% endblock content %}

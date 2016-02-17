@@ -1,0 +1,29 @@
+ <header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+        <ul class="nav navbar-nav">
+            <li><a href="#login"data-toggle="modal" data-target="#login">Login</a></li>
+            {% if user != None %}
+            <a class="navbar-brand" href="#">{{user.username}}</a>
+            <li><a href="#"data-toggle="modal" data-target="#SGene">Gene Query</a></li>
+            <li><a href="#"data-toggle="modal" data-target="#areaSelection"> Area Selection</a></li>
+            <li>
+                <div class="form-group">
+                    <li><label  for="sel1">Select Significant Phenotype to dislay  : </label></li>
+                    <li>
+                        <form action="/SGene/" name="view" method=POST>
+                            {% csrf_token %}
+                            <select class="form-control" id="sel1" name="view" onChange="form.submit();">
+                                {% for phe in pheno %}
+                                    <option>{{ phe }}</option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </li>
+                </div>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+
+
+</header>

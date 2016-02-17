@@ -1,0 +1,44 @@
+{% block form-sgene %}
+    <div class="form" id="form-sGene" xmlns="http://www.w3.org/1999/html">
+        <form action="/SGene/" method="post" id="SGene" class="form-container">
+            <input type='hidden' name='csrfmiddlewaretoken' value='MSBWTwBs4iNmhZY2I07GgqJxWVTCAPNN'/>
+
+            <div class="GeneQuery">
+                {% csrf_token %}
+                <h3 class="form-legend">Gene Query</h3>
+                <p class="login-error" id="error">{{ error|safe }}</p>
+                <div class="">
+                    <div class="">
+                        <label for="rs_ID" class="form-label">rs ID:</label>
+                        <input class="form-input-text" name="rs_ID" id="rs_ID"/>
+                    </div>
+                    <div class="">
+                        <b>OR</b>
+                    </div>
+                    <div class="">
+                        <label for="gene" class="form-label">Gene:</label>
+                        <input class="form-input-text" name="gene" id="gene"/>
+                    </div>
+                </div>
+                <div class="form-slider">
+                    <label for="gene" class="form-label ">Threshold p-value : </label>
+                    <input class="form-input-text" name="threshold" id ="threshold" placeholder="0.001">
+                    <input type="range"  min="0" max="1" value="0.001" step="0.0005" oninput="outputUpdate(value)"/>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <input type="submit" class="btn form-submit" value="Search"/>
+                <span class="btn form-cancel" id="Cancel" onClick="closeForm()">Cancel</span>
+            </div>
+        </form>
+    </div>
+    <script>
+
+
+
+        function outputUpdate(vol) {
+            document.querySelector('#threshold').value = vol;
+        }
+    </script>
+{% endblock form-sgene %}
