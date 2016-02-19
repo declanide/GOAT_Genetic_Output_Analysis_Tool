@@ -161,7 +161,6 @@ def areaSelection(chromosome,min_pos,max_pos,phenotype_select):
     area["risk_allele"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), area['allele_B'], area['allele_A'])             # select risk allele
     area["risk_af"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), ((2*area["cohort_BB"])+area["cohort_AB"])/((2*area["cohort_AA"])+(2*area["cohort_AB"])+(2*area["cohort_BB"])), ((2*area["cohort_AA"])+area["cohort_AB"])/((2*area["cohort_AA"])+(2*area["cohort_AB"])+(2*area["cohort_BB"]))) #calculate allele frequency for each allele
     area["risk_allele_beta"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), area['beta_assoc'], area['beta_assoc']*-1)         #update beta according to risk allele result
-    long = len(area['rs_id_assoc'])                                   # SIZE OF DATASET
     sql = "select m.nom,m.end_gen_after,m.end_gen,m.start_gen,m.end_gen_before,m.func,m.position,m.start_gen_after,m.start_gen_before, m.observed  from marqueurs m where m.chromosome="+str(chromosome)+" and position between "+str(min_pos)+" and "+str(max_pos)
     df_hg19_gene = pd.read_sql(sql, connection)                               # SQL QUERY SAVED IN PANDAS DATAFRAME
     df_hg19_gene_mapping = df_hg19_gene.rename(columns = {'nom':'rs_id_assoc'})                   # RENAME COLUMN
@@ -169,9 +168,9 @@ def areaSelection(chromosome,min_pos,max_pos,phenotype_select):
     string_name = "CHROMOSOME :"+str(chromosome)+" \nBETWEEN POSITIONS "+str(min_pos)+" AND "+str(max_pos)                # TITLE FOR GRAPH
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
     pd.set_option('display.max_colwidth',-1)                        #important to make links appear in pandas dataframe
-    data = pd.merge(area,df_hg19_gene_mapping,on='rs_id_assoc',how='outer')             # MERGE ALL DATAFRAME
+    complete_data = pd.merge(area,df_hg19_gene_mapping,on='rs_id_assoc',how='outer')             # MERGE ALL DATAFRAME
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    complete_data = data[0:long]                                        # SELECT ONLY DATA FROM MANHATTAN
+
     del complete_data["pos"]
     sort_df = complete_data.sort(['position'])              #sort BY position
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
