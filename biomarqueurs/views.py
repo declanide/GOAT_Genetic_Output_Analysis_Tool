@@ -33,16 +33,17 @@ from django.http import HttpResponse
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 global threshold                                         #default threshold
-global seuil                            #default threshold after transformation
+global publication_threshold
 colorManhattan= [( 'blue' ,' gray' ),( 'red' , 'blue' ),( 'black' , 'grey' )]            #for future development possible colors for manhattan
 
-global sorted_data                                           # store dataframe in memory for future query
 global phenotypes_found                                     # store significant phenotypes found
 global phenotype_selected                                   # phenotype been displayed
 global chr_max_pos                                          # STORE MAX position of each chromosome
 global chr_min_pos                                          # STORE MIN position of each chromosome
 global String_selection
 global selection
+global log_threshold
+global log_publication_threshold
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
                                             #Authentification page
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -102,32 +103,32 @@ def manhattan( s, t ):
     global chr_min_pos                          #GLOBAL variables call
     max_v=int(s.log10.max())
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    df = s.groupby('chromosome')                                    # CUTS GWAS DATA TO COMPUTE GWAS'S POSITIONS
-    c = 0
-    dictio = {}
-    chr_max_pos=[]
-    chr_min_pos=[]
-    manhattan_max_pos = [0]
-    df_concat=[]
-    for name, group in df:
-        dictio[str(name)] = group
-        chr_min_pos.append(int(dictio[str(name)]['pos'][0:1]))                                #position min chromosome
-        manhattan_max_pos.append(int(dictio[str(name)]['pos'][len(dictio[str(name)]['pos']) - 1:len(dictio[str(name)]['pos'])]) + manhattan_max_pos[c])
-        chr_max_pos.append(int(dictio[str(name)]['pos'][len(dictio[str(name)]['pos']) - 1:len(dictio[str(name)]['pos'])]))              #position max chromosome
-        dictio[str(name)]['position']=group['pos'] + manhattan_max_pos[c]
-        c += 1
-        df_concat.append(dictio[str(name)])
-    c = 0
-    f_data=pd.concat(df_concat)
+    df_slice_dataframe = s.groupby('chromosome')                                    # CUTS GWAS DATA TO COMPUTE GWAS'S POSITIONS
+    counter = 0
+    dictionary_of_slices = {}               # put slices of dataframe in a dictionnary for reforming whole dataframe
+    chr_max_pos=[]                          # get maximum position to get middle after
+    chr_min_pos=[]                          # get minimum positions to get middle after
+    manhattan_max_pos = [0]                 # get maximum position for each chromosome for manhattan plotting
+    df_concat_slice=[]
+    for name, group in df_slice_dataframe:
+        dictionary_of_slices[str(name)] = group
+        chr_min_pos.append(int(dictionary_of_slices[str(name)]['pos'][0:1]))                                #position min chromosome
+        manhattan_max_pos.append(int(dictionary_of_slices[str(name)]['pos'][len(dictionary_of_slices[str(name)]['pos']) - 1:len(dictionary_of_slices[str(name)]['pos'])]) + manhattan_max_pos[counter])
+        chr_max_pos.append(int(dictionary_of_slices[str(name)]['pos'][len(dictionary_of_slices[str(name)]['pos']) - 1:len(dictionary_of_slices[str(name)]['pos'])]))              #position max chromosome
+        dictionary_of_slices[str(name)]['position']=group['pos'] + manhattan_max_pos[counter]
+        counter += 1
+        df_concat_slice.append(dictionary_of_slices[str(name)])
+    counter = 0             #
+    full_data=pd.concat(df_concat_slice)                #recreate original manhattan data with position column added
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    millieu = []                                                                  # HALF OF CHROMOSOME POSITIONS TO STORE
+    millieu = []                                                                  # HALF OF CHROMOSOME POSITIONS TO STORE name of chromosomes
 
     for n in range(1,len(manhattan_max_pos)):
         millieu.append(manhattan_max_pos[n-1] + ((manhattan_max_pos[n]-manhattan_max_pos[n-1])//2))
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
                                 # CREATE MANHATTAN PLOT
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    source = ColumnDataSource(f_data)                    # SOURCE DATA FOR BOKEH PLOT
+    source = ColumnDataSource(full_data)                    # SOURCE DATA FOR BOKEH PLOT
     TOOLS = [HoverTool(tooltips=[("SNP", "@rs_id_assoc"),("Gene", "@gene"),("P-value","@pvalue_assoc")]), TapTool()]
     plot = figure(tools=["box_zoom", "box_select", "wheel_zoom", TOOLS[0], "crosshair", "reset", "save", TOOLS[1]] , x_axis_label='Chromosomes', y_axis_label='-log10(p)', plot_width=900, plot_height=500,y_range=(2.0,max_v+3))
     plot.circle('position', 'odd', source=source, size=3)
@@ -144,65 +145,35 @@ def manhattan( s, t ):
     graph, div1 = components(plot, CDN)
     return graph, div1
 
-    '''
-    plt.figure(figsize=(14,max_v+2))
-    for n in dictio:
-        if int(n) % 2 == 0:
-            plt.plot(dictio[n]['position'],dictio[n]['log10_x'],".",mec="black", mfc="black",ms=4)
-        else:
-            plt.plot(dictio[n]['position'],dictio[n]['log10_x'],".",mec="gray", mfc="gray",ms=4)
-    for n in dictio:
-            plt.plot(dictio[n]['position'],dictio[n]['log10_y'],".",mec="red", mfc="red",ms=4)
-    plt.axhline(y=(-np.log10(t)), xmin=0, xmax=1, color="black", ls="--")
-    plt.xlabel("Chromosome")
-    plt.ylabel("-log10(p)")
-    plt.ylim(0,max_v+2)
-    man_min=manhattan_max_pos[0]-60000000
-    man_max=manhattan_max_pos[len(manhattan_max_pos)-1]+60000000
-    plt.xlim(man_min,man_max)
-    plt.grid.grid_line_color = None
-    plt.xticks(millieu, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"], fontsize=8)
-    '''
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    # SAVE MANHATTAN'S PICTURE
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    #plt.savefig("/Your/Path/Static/", dpi=300, facecolor='w', edgecolor='w',
-    #    orientation='portrait', papertype=None, format=None,
-    #    transparent=False, bbox_inches="tight", pad_inches=0.1,
-    #    frameon=None)
-
-    #return "manhattan.png"  # RETURN SAVED PICTURE
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
                                                     #Create area Selection graph with table
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-def areaSelection(c,min,max,p,s):
+def areaSelection(chromosome,min_pos,max_pos,phenotype_select):
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
     global threshold                                # GLOBAL VARIABLE ACESS
     global seuil
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    sql="select distinct a.rs_id_assoc , a.chromosome,a.pos,a.info_assoc,a.pvalue_assoc,a.allele_A,a.allele_B,a.cohort_AA,a.cohort_BB,a.beta_assoc,a.maf, a.all_OR,xp.covariates,p.Risk_on_rise,dat.name from assoc a join experiment xp on a.experiment=xp.idexperiment join dataset dat on xp.dataset=dat.iddataset join phenotypes  p  on xp.phenotype=p.idphenotypes where p.nom='"+phenotype_selected+"' and a.chromosome="+c
-    chrarea=pd.read_sql(sql,connection)
+    sql="select distinct a.rs_id_assoc , a.chromosome,a.pos,a.info_assoc,a.pvalue_assoc,a.allele_A,a.allele_B,a.cohort_AA,a.cohort_BB,a.beta_assoc,a.maf, a.all_OR,xp.covariates,p.Risk_on_rise,dat.name from assoc a join experiment xp on a.experiment=xp.idexperiment join dataset dat on xp.dataset=dat.iddataset join phenotypes  p  on xp.phenotype=p.idphenotypes where p.nom='"+phenotype_select+"' and a.chromosome="+chromosome
+    chrarea=pd.read_sql(sql,connection)                     
     #chrarea = s[s['chromosome'] == c]                      #SELECT CHROMOSOME
     area = chrarea[(chrarea['pos']>min) & (chrarea['pos']<max)]       #SELECT INTERVAL OF POSITIONS
-    area["risk_allele"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), area['allele_B'], area['allele_A'])
-    area["risk_af"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), ((2*area["cohort_BB"])+area["cohort_AB"])/((2*area["cohort_AA"])+(2*area["cohort_AB"])+(2*area["cohort_BB"])), ((2*area["cohort_AA"])+area["cohort_AB"])/((2*area["cohort_AA"])+(2*area["cohort_AB"])+(2*area["cohort_BB"])))
-    area["risk_allele_beta"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), area['beta_assoc'], area['beta_assoc']*-1)
+    area["risk_allele"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), area['allele_B'], area['allele_A'])             # select risk allele
+    area["risk_af"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), ((2*area["cohort_BB"])+area["cohort_AB"])/((2*area["cohort_AA"])+(2*area["cohort_AB"])+(2*area["cohort_BB"])), ((2*area["cohort_AA"])+area["cohort_AB"])/((2*area["cohort_AA"])+(2*area["cohort_AB"])+(2*area["cohort_BB"]))) #calculate allele frequency for each allele
+    area["risk_allele_beta"]=np.where((area['beta_assoc'] > 0 & area['Risk_on_rise']==1)|(area['beta_assoc'] < 0 & area['Risk_on_rise']==0), area['beta_assoc'], area['beta_assoc']*-1)         #update beta according to risk allele result
     long = len(area['rs_id_assoc'])                                   # SIZE OF DATASET
-    sql = "select m.nom,m.end_gen_after,m.end_gen,m.start_gen,m.end_gen_before,m.func,m.position,m.start_gen_after,m.start_gen_before, m.observed  from marqueurs m where m.chromosome="+str(c)+" and position between "+str(min)+" and "+str(max)
-    df = pd.read_sql(sql, connection)                               # SQL QUERY SAVED IN PANDAS DATAFRAME
-    d1 = df.rename(columns = {'nom':'rs_id_assoc'})                   # RENAME COLUMN
-    #sql2 = "select ex.idexperiment, dat.name from experiment ex join dataset dat on ex.dataset=dat.iddataset where ex.idexperiment="+str(int(area['experiment'][:1]))
-    #df2 = pd.read_sql(sql2, connection)                               # SQL QUERY SAVED IN PANDAS DATAFRAME
-    #d = df2.rename(columns = {'idexperiment':'experiment'})           # RENAME COLUMNS
-    string_name = "CHROMOSOME :"+str(c)+" \nBETWEEN POSITIONS "+str(min)+" AND "+str(max)                # TITLE FOR GRAPH
+    sql = "select m.nom,m.end_gen_after,m.end_gen,m.start_gen,m.end_gen_before,m.func,m.position,m.start_gen_after,m.start_gen_before, m.observed  from marqueurs m where m.chromosome="+str(chromosome)+" and position between "+str(min_pos)+" and "+str(max_pos)
+    df_hg19_gene = pd.read_sql(sql, connection)                               # SQL QUERY SAVED IN PANDAS DATAFRAME
+    df_hg19_gene_mapping = df_hg19_gene.rename(columns = {'nom':'rs_id_assoc'})                   # RENAME COLUMN
+
+    string_name = "CHROMOSOME :"+str(chromosome)+" \nBETWEEN POSITIONS "+str(min_pos)+" AND "+str(max_pos)                # TITLE FOR GRAPH
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
     pd.set_option('display.max_colwidth',-1)                        #important to make links appear in pandas dataframe
-    data = pd.merge(area,d1,on='rs_id_assoc',how='outer')             # MERGE ALL DATAFRAME
+    data = pd.merge(area,df_hg19_gene_mapping,on='rs_id_assoc',how='outer')             # MERGE ALL DATAFRAME
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    c_data = data[0:long]                                        # SELECT ONLY DATA FROM MANHATTAN
-    del c_data["pos"]
-    sort_df = c_data.sort(['position'])              #sort BY position
+    complete_data = data[0:long]                                        # SELECT ONLY DATA FROM MANHATTAN
+    del complete_data["pos"]
+    sort_df = complete_data.sort(['position'])              #sort BY position
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
                                                         # CREATING TABLES COLUMNS IN ADDING INFORMATION
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#    pd.set_option('display.max_colwidth', -1)
@@ -214,21 +185,21 @@ def areaSelection(c,min,max,p,s):
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
                                     #NEW COLUMNS AND RENAMING
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-    sort_df['imp'] = np.where(sort_df['info_assoc']==1, sort_df['log10'], 'NaN')
-    sort_df['Imputed'] = np.where(sort_df['info_assoc']==1, True, False)
-    c_data['Imputed'] = np.where(c_data['info_assoc']==1, True, False)
-    sort_df['interest'] = np.where(sort_df['log10']>=(-np.log10(0.00000005)), sort_df['log10'], 'NaN')
+    sort_df['imp'] = np.where(sort_df['info_assoc']==1, sort_df['log10'], 'NaN') # gather information on imputed snps
+    sort_df['Imputed'] = np.where(sort_df['info_assoc']==1, True, False)            #discriminate between imputed and genotyped for table
+    complete_data['Imputed'] = np.where(complete_data['info_assoc']==1, True, False)    #discriminate between imputed and genotyped for graph
+    sort_df['interest'] = np.where(sort_df['log10']>=(-np.log10(0.00000005)), sort_df['log10'], 'NaN')  #select snp of interest
 
-    c_data['dbSNP'] = '<a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs='+c_data.rs_id_assoc+'"target="_blank">dbSNP</a>'
-    c_data['GWAS_Catalog'] = '<p><a href="http://www.genome.gov/gwastudies/index.cfm?snp='+c_data.rs_id_assoc+'"target="_blank">By rsID</a></p><p><a href="http://www.genome.gov/gwastudies/index.cfm?gene='+c_data['gene_before']+'"target="_blank">By gene before</a><p><a href="http://www.genome.gov/gwastudies/index.cfm?gene='+c_data['gene']+'"target="_blank">By gene</a></p><p><a href="http://www.genome.gov/gwastudies/index.cfm?gene='+c_data['gene_after']+'"target="_blank">By gene after</a>'
-    c_data['Genecards'] = '<p><a href="http://www.genecards.org/cgi-bin/carddisp.pl?gene='+c_data['gene_before']+'"target="_blank">By gene before</a></p><p><a href="http://www.genecards.org/cgi-bin/carddisp.pl?gene='+c_data['gene']+'"target="_blank">By gene</a></p><p><a href="http://www.genecards.org/cgi-bin/carddisp.pl?gene='+c_data['gene_after']+'"target="_blank">By gene after</a>'
+    complete_data['dbSNP'] = '<a href="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs='+complete_data.rs_id_assoc+'"target="_blank">dbSNP</a>'
+    complete_data['GWAS_Catalog'] = '<p><a href="http://www.genome.gov/gwastudies/index.cfm?snp='+complete_data.rs_id_assoc+'"target="_blank">By rsID</a></p><p><a href="http://www.genome.gov/gwastudies/index.cfm?gene='+complete_data['gene_before']+'"target="_blank">By gene before</a><p><a href="http://www.genome.gov/gwastudies/index.cfm?gene='+complete_data['gene']+'"target="_blank">By gene</a></p><p><a href="http://www.genome.gov/gwastudies/index.cfm?gene='+complete_data['gene_after']+'"target="_blank">By gene after</a>'
+    complete_data['Genecards'] = '<p><a href="http://www.genecards.org/cgi-bin/carddisp.pl?gene='+complete_data['gene_before']+'"target="_blank">By gene before</a></p><p><a href="http://www.genecards.org/cgi-bin/carddisp.pl?gene='+complete_data['gene']+'"target="_blank">By gene</a></p><p><a href="http://www.genecards.org/cgi-bin/carddisp.pl?gene='+complete_data['gene_after']+'"target="_blank">By gene after</a>'
 
-    c_data = c_data.rename(columns = {'rs_id_assoc': 'rs_ID', 'position': 'Position', 'chromosome': 'Chr','func':'Region', 'gene_before': 'GeneBefore', 'pvalue_assoc': 'P-value', 'allele_A': 'Allele A', 'allele_B': 'Allele B', 'gene': 'Gene', 'name': 'Cohort', 'gene_after': 'GeneAfter'})
-    c_data.sort_index(inplace=True)
-    c_data["Allele\nmineure"] = np.where(c_data['cohort_AA'] > c_data['cohort_BB'], c_data['Allele B'], c_data['Allele A'])
+    complete_data = complete_data.rename(columns = {'rs_id_assoc': 'rs_ID', 'position': 'Position', 'chromosome': 'Chr','func':'Region', 'gene_before': 'GeneBefore', 'pvalue_assoc': 'P-value', 'allele_A': 'Allele A', 'allele_B': 'Allele B', 'gene': 'Gene', 'name': 'Cohort', 'gene_after': 'GeneAfter'})  #rename column to make them look nicer
+    complete_data.sort_index(inplace=True)
+    complete_data["Allele\nmineure"] = np.where(complete_data['cohort_AA'] > complete_data['cohort_BB'], complete_data['Allele B'], complete_data['Allele A'])       #calculate minor allele then select it
 
-    DF = c_data[['rs_ID', 'Chr', 'Position', 'GeneBefore', 'Gene', 'GeneAfter', 'Region','P-value', 'Imputed', 'Allele A', 'Allele B', 'Allele\nmineure','risk_allele','risk_af','risk_allele_beta', 'Cohort', 'dbSNP', 'GWAS_Catalog', 'Genecards']]
-    #DF = c_data[['rs_ID', 'Chr', 'Position', 'Gene before', 'Gene', 'Gene after', 'Region','P-value   ', 'Imputed', 'Allele A', 'Allele B', 'Allele\nmineure', 'Cohort', 'dbSNP', 'GWAS_Catalog', 'Genecards']]
+    DF = complete_data[['rs_ID', 'Chr', 'Position', 'GeneBefore', 'Gene', 'GeneAfter', 'Region','P-value', 'Imputed', 'Allele A', 'Allele B', 'Allele\nmineure','risk_allele','risk_af','risk_allele_beta', 'Cohort', 'dbSNP', 'GWAS_Catalog', 'Genecards']]
+    #DF = complete_data[['rs_ID', 'Chr', 'Position', 'Gene before', 'Gene', 'Gene after', 'Region','P-value   ', 'Imputed', 'Allele A', 'Allele B', 'Allele\nmineure', 'Cohort', 'dbSNP', 'GWAS_Catalog', 'Genecards']]
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
     #file = DF.to_csv("/Users/beatrizkanzki/PycharmProjects/GOAT_Genetic_Ouput_Analysis_Tool/static/GeneSelection.csv", cols=['rs_id_assoc','Chr','Position','Gene before','Gene','Gene after','Region','P-value','Allele A','Allele B','Allele\nmineure','Cohort']) #SELECT COLUMNS FOR CSV FILE
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -329,11 +300,15 @@ def SGene(request):
     
     global phenotypes_found
     global phenotype_selected
-    global sorted_data                              #GLOBAL VARIABLES TO BE USED
+    global publication_threshold
     global threshold
     global String_selection
     global selection
-    global seuil
+    global log_threshold
+    global log_publication_threshold
+
+    threshold=0.001
+    publication_threshold=0.00000005
 
     if request.method == 'POST':
 
@@ -350,19 +325,20 @@ def SGene(request):
 
 
             rs = request.POST['rs_ID']
-            g = request.POST['gene']
-            t = request.POST['threshold']
+            gene = request.POST['gene']
+            query_string = "rs"
+            query = (str(rs),)
+            phenotype_search = connect(query, str(threshold), query_string)
 
             selection=request.POST.getlist('col')
             String_selection=""
             if(len(selection))!=0:
-                for n in selection:
+                for n in selection:                     #put query in table
                     String_selection += ", a."+str(n)
 
 
-            if len(t) == 0:
-                    t = 0.001
-                    threshold = t
+            if len(threshold) == 0:
+                    threshold = 0.001
 
 
 
@@ -374,11 +350,11 @@ def SGene(request):
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 
-            if float(t) > 1:
+            if float(threshold) > 1:
                 #return HttpResponse("YOUR THRESHOLD IS INVALID, PLEASE SELECT A THRESHOLD UNDER 1", status=400)
                 return render(request, 'modules/error.html', {'error': "YOUR THRESHOLD IS INVALID, \n PLEASE SELECT A THRESHOLD UNDER 1!"})
 
-            if (len(rs) != 0 and len(g) != 0)or(len(rs) == 0 and len(g) == 0):                             #Si recherche avec les deux champs pas permettre
+            if (len(rs) != 0 and len(gene) != 0)or(len(rs) == 0 and len(gene) == 0):                             #Si recherche avec les deux champs pas permettre
                 #return HttpResponse("YOU CAN ONLY SEARCH BY RS_ID OR GENE NOT BOTH,\n PLEASE TRY AGAIN!", status=400)
                 return render(request, 'modules/error.html', {'error': "YOU CAN ONLY SEARCH BY RS_ID OR GENE NOT BOTH,\n PLEASE TRY AGAIN!"})
 
@@ -386,7 +362,7 @@ def SGene(request):
             if len(rs) != 0 and rs[0:2] == 'rs' and ',' not in rs:
                 query = (str(rs))
 
-            if rs != 0 and g == 0:
+            if rs != 0 and gene == 0:
                 for n in range(len(query)):
                     if query[n][0:2] != 'rs' and r'rs\d.+' not in rs:
                         #return HttpResponse("ONE OR MORE OF YOUR RS_ID'S ARE INVALID\n PLEASE ENTER A VALID RS_ID!", status=400)
@@ -396,24 +372,20 @@ def SGene(request):
                                                                             # VERIFY SIGNIFICANT PHENOTYPES
     #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
             if ',' not in rs and ' ' not in rs and ';' not in rs and len(rs) != 0:
-                q = "rs"
-                query = (str(rs),)
-                ph = connect(query, str(t), q)
-                if "SIGNIFICANT" in ph:
+
+                if "SIGNIFICANT" in phenotype_search:
                     #return HttpResponse("THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!", status=400)
                     return render(request, 'modules/error.html', {'error': "THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!"})
                 else:
-                    phenotypes_found=ph
+                    phenotypes_found=phenotype_search
                     phenotype_selected=phenotypes_found[0]
-            if ',' not in g and ' ' not in g and ';' not in g and len(g) !=0:
-                q = "gene"
-                query = (str(g),)
-                ph = connect(query, str(t), q)
-                if "SIGNIFICANT" in ph:
+            if ',' not in gene and ' ' not in gene and ';' not in gene and len(gene) !=0:
+
+                if "SIGNIFICANT" in phenotype_search:
                     #return HttpResponse("THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!", status=400)
                     return render(request, 'modules/error.html', {'error': "THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!"})
                 else:
-                    phenotypes_found = ph
+                    phenotypes_found = phenotype_search
                     phenotype_selected = phenotypes_found[0]
 
 
@@ -421,79 +393,69 @@ def SGene(request):
                 if ',' in rs:
                     query = str(rs).split(',')                                 #Separe la string d'apres le separateur
                     query = tuple(query)
-                    q = "rs"
-                    ph = connect(query,str(t),q)
-                    if "SIGNIFICANT" in ph:
+                    if "SIGNIFICANT" in phenotype_search:
                         #return HttpResponse("THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!", status=400)
                         return render(request, 'modules/error.html', {'error':"THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!"})
                     else:
-                        phenotypes_found = ph
+                        phenotypes_found = phenotype_search
                         phenotype_selected = phenotypes_found[0]
                 if ' ' in rs and ','not in rs:
                     query = str(rs).split()
                     query = tuple(query)
-                    q = "rs"
-                    ph = connect(query, str(t), q)
-                    if "SIGNIFICANT" in ph:
+                    if "SIGNIFICANT" in phenotype_search:
+
                         #return HttpResponse("THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!", status=400)
                         return render(request, 'modules/error.html', {'error': "THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!"})
                     else:
-                        phenotypes_found = ph
+                        phenotypes_found = phenotype_search
                         phenotype_selected = phenotypes_found[0]
                 if ';' in rs:
                     query = str(rs).split(';')
                     query = tuple(query)
-                    q = "rs"
-                    ph = connect(query,str(t),q)
-                    if "SIGNIFICANT" in ph:
+                    if "SIGNIFICANT" in phenotype_search:
                         #return HttpResponse("THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!", status=400)
                         return render(request, 'modules/error.html', {'error': "THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!"})
                     else:
-                        phenotypes_found = ph
+                        phenotypes_found = phenotype_search
                         phenotype_selected = phenotypes_found[0]
-                if ',' in g:
-                    query = str(g).split(',')
+                if ',' in gene:
+                    query = str(gene).split(',')
                     query = tuple(query)                                 #Separe la string d'apres le separateur
-                    q = "gene"
-                    ph = connect(query,str(t),q)
-                    if "SIGNIFICANT" in ph:
+                    query_string = "gene"
+                    if "SIGNIFICANT" in phenotype_search:
                         #return HttpResponse("THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!", status=400)
                         return render(request, 'modules/error.html', {'error': "THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!"})
                     else:
-                        phenotypes_found = ph
+                        phenotypes_found = phenotype_search
                         phenotype_selected = phenotypes_found[0]
-                if ' ' in g and ','not in g:
-                    query = str(g).split()
+                if ' ' in gene and ','not in gene:
+                    query = str(gene).split()
                     query = tuple(query)                                      #USER INPUT VERIFICATION
-#---------------------
-                    q = "gene"
-                    ph = connect(query, str(t), q)
-                    if "SIGNIFICANT" in ph:
+                    query_string = "gene"
+                    if "SIGNIFICANT" in phenotype_search:
                         #return HttpResponse("THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!", status=400)
                         return render(request, 'modules/error.html', {'error': "THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!"})
                     else:
-                        phenotypes_found = ph
+                        phenotypes_found = phenotype_search
                         phenotype_selected = phenotypes_found[0]
-                if ';' in g:
-                    query = str(g).split(';')
+                if ';' in gene:
+                    query = str(gene).split(';')
                     query = tuple(query)
-                    q = "gene"
-                    ph = connect(query, str(t), q)
-                    if "SIGNIFICANT" in ph:
+                    query_string = "gene"
+                    if "SIGNIFICANT" in phenotype_search:
                         #return HttpResponse("THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!", status=400)
                         return render(request, 'modules/error.html', {'error': "THERE ARE NO SIGNIFICANT SNP'S WITH THE THRESHOLD SELECTED FOR "+str(query)+". \nPLEASE CHANGE THE THRESHOLD FOR BETTER RESULTS!"})
                     else:
-                        phenotypes_found = ph
+                        phenotypes_found = phenotype_search
                         phenotype_selected = phenotypes_found[0]
 
                 if ',' not in rs and ' ' not in rs and ';' not in rs and len(rs)!=0 and r"rs[0-9].+" in rs:
                     #return HttpResponse("PLEASE SEPARATE YOUR QUERY BY \",\" OR \";\" OR ONE SPACE\"", status=400)
                     return render(request, 'modules/error.html', {'error': "PLEASE SEPARATE YOUR QUERY BY \",\" OR \";\" OR ONE SPACE\""})
-                if ',' not in g and ' ' not in g  and ';' not in g and r"[\P{P}-]" in g and len(g)!=0:
+                if ',' not in gene and ' ' not in gene  and ';' not in gene and r"[\P{P}-]" in gene and len(gene)!=0:
                     #return HttpResponse("PLEASE SEPARATE YOUR QUERY BY \",\" OR \";\" OR ONE SPACE\"", status=400)
                     return render(request, 'modules/error.html', {'error': "PLEASE SEPARATE YOUR QUERY BY \",\" OR \";\" OR ONE SPACE\""})
 
-            threshold = float(t)
 
 
 
@@ -503,19 +465,34 @@ def SGene(request):
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
         if 'view' in request.POST:
-            phe = request.POST['view']
-            phenotype_selected = phe
+            phenotype_selected = request.POST['view']
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
                                                 #SI LE BOUTON AREA SELECTION EST CLIQUEE
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
         if 'chromosome' in request.POST:
+
+
             chromosome = int(request.POST['chromosome'])
             position = int(request.POST['position'])
-	    global chr_min_pos
-	    global chr_max_pos
-            global phenotypes_found
+            sql="select distinct a.rs_id_assoc, a.chromosome,a.pos,a.info_assoc,a.pvalue_assoc,a.allele_A,a.allele_B,a.cohort_AA,a.cohort_BB,a.beta_assoc,a.maf, a.all_OR,xp.covariates,m.gene,m.gene_before,m.gene_after from assoc a join experiment xp on a.experiment=xp.idexperiment join phenotypes  p  on xp.phenotype=p.idphenotypes join marqueurs m on a.rs_id_assoc=m.nom where p.nom='"+phenotype_selected+"' and a.pvalue_assoc<=0.001"
+            sorted_data = pd.read_sql(sql, connection)
+            sorted_data.drop_duplicates(subset='rs_id_assoc', inplace=True,take_last=True)
+            sorted_data["log10"] = -np.log10(sorted_data.pvalue_assoc)               #ADD COLUMN LOG10
+            sorted_data = sorted_data.sort(['chromosome', 'pos'])
+
+            sorted_data['even']=np.where(sorted_data['chromosome'] %2==0,sorted_data['log10'] , 'NaN')
+            sorted_data["odd"]=np.where(sorted_data['chromosome'] %2!=0,sorted_data['log10'] , 'NaN')
+
+            col=['rs_id_assoc', 'chromosome', 'pos', 'pvalue_assoc', 'allele_A', 'allele_B', 'covariates', 'cohort_BB', 'cohort_AA', 'beta_assoc', 'maf']+selection
+
+            DF = sorted_data[col]         # select COLUMN OF DATAFRAME TO SAVE IN CSV
+
+
+            graph,div1=manhattan(sorted_data, -np.log10(0.00000005))                                       # CREATE MANHATTAN
+
+            sorted_data_json = sorted_data.to_json(orient='records')
     #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
                                                         # VERIFY USER INPUT
     #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
@@ -537,8 +514,8 @@ def SGene(request):
                 position_max = chr_max_pos[chromosome-1]
                 position_min = position_max-3000000
     #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-            graph, div1, jsonData,name = areaSelection(chromosome, position_min, position_max, str(phenotype_selected), sorted_data)
-            return render(request, 'modules/areaSelection.html', {'phenotype': phenotype_selected,'name':name, 'graph': graph, 'pheno': phenotypes_found, 'div1':div1, 'link': "<a href=\"/static/GeneSelection.csv\">Download CSV File</a>", 'jsonData': jsonData, 'user': request.user})
+            graph, div1, jsonData,name = areaSelection(chromosome, position_min, position_max, str(phenotype_selected))
+            return render(request, 'modules/areaSelection.html', {'name':name,'username':request.user,'phenotype':phenotype_selected,'graph': graph, 'div1':div1,'pheno': phenotypes_found, 'jsonData':sorted_data_json})
 
 
 
@@ -546,24 +523,15 @@ def SGene(request):
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
                                                                     #GATHER INFORMATION FOR MANHATTAN AND MORE
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
-
-        #extra_column = ", a.cohort_AB, a.cases_AA, a.cases_AB, a.cases_BB, a.allele_A_freq, a.allele_B_freq, a.cases_maf, a.controls_hwe, a.miss_dat_prop, a.cohort_hwe, a.cases_hwe, a.het_OR, a.het_OR_lower, a.het_OR_upper, a.all_OR, a.all_OR_lower, a.all_OR_upper"
-        extra_column = ""
-        #sql = "select distinct a.rs_id_assoc ,a.experiment, a.chromosome,a.pos,a.info_assoc,a.pvalue_assoc,a.allele_A,a.allele_B,a.cohort_AA,a.cohort_BB,a.beta_assoc,a.maf "+extra_column+", xp.covariates from assoc a join experiment xp on a.experiment=xp.idexperiment join phenotypes  p  on xp.phenotype=p.idphenotypes where p.nom='"+phenotype_selected+"' limit 100000"
-        #sql = "select distinct a.rs_id_assoc ,a.experiment, a.chromosome,a.pos,a.info_assoc,a.pvalue_assoc,a.allele_A,a.allele_B,a.cohort_AA,a.cohort_BB,a.beta_assoc,a.maf "+extra_column+", xp.covariates from assoc a join experiment xp on a.experiment=xp.idexperiment join phenotypes  p  on xp.phenotype=p.idphenotypes where p.nom='"+phenotype_selected+"'"
-        #sql="select distinct a.rs_id_assoc ,a.experiment, a.chromosome,a.pos,a.info_assoc,a.pvalue_assoc,a.allele_A,a.allele_B,a.cohort_AA,a.cohort_BB,a.beta_assoc,a.maf, a.all_OR "+extra_column+",xp.covariates,m.gene,m.gene_before,m.gene_after, case when a.beta_assoc>0 and p.Risk_on_rise is true then a.allele_B when a.beta_assoc<0 and p.Risk_on_rise is true then a.allele_A when a.beta_assoc>0 and p.Risk_on_rise is false then a.allele_A when a.beta_assoc<0 and p.Risk_on_rise is false then a.allele_B end as risk_allele, case when a.beta_assoc>0 and p.Risk_on_rise is true then ( (2*a.cohort_BB) + a.cohort_AB ) / ((2*a.cohort_AA) + (2*a.cohort_AB) +(2*a.cohort_BB) ) when a.beta_assoc<0 and p.Risk_on_rise is true then ( (2*a.cohort_AA) + a.cohort_AB ) / ((2*a.cohort_AA) + (2*a.cohort_AB) +(2*a.cohort_BB) ) when a.beta_assoc>0 and p.Risk_on_rise is false then ( (2*a.cohort_AA) + a.cohort_AB ) / ((2*a.cohort_AA) + (2*a.cohort_AB) +(2*a.cohort_BB) ) when a.beta_assoc<0 and p.Risk_on_rise is false then ( (2*a.cohort_BB) + a.cohort_AB ) / ((2*a.cohort_AA) + (2*a.cohort_AB) +(2*a.cohort_BB) ) end as risk_af, case when a.beta_assoc>0 and p.Risk_on_rise is true then a.beta_assoc when a.beta_assoc<0 and p.Risk_on_rise is true then a.beta_assoc*(-1) when a.beta_assoc>0 and p.Risk_on_rise is false then a.beta_assoc*(-1) when a.beta_assoc<0 and p.Risk_on_rise is false then a.beta_assoc end as risk_allele_beta from assoc a join experiment xp on a.experiment=xp.idexperiment join phenotypes  p  on xp.phenotype=p.idphenotypes join marqueurs m on a.rs_id_assoc=m.nom where p.nom='"+phenotype_selected+"'"
         sql="select distinct a.rs_id_assoc, a.chromosome,a.pos,a.info_assoc,a.pvalue_assoc,a.allele_A,a.allele_B,a.cohort_AA,a.cohort_BB,a.beta_assoc,a.maf, a.all_OR,xp.covariates,m.gene,m.gene_before,m.gene_after from assoc a join experiment xp on a.experiment=xp.idexperiment join phenotypes  p  on xp.phenotype=p.idphenotypes join marqueurs m on a.rs_id_assoc=m.nom where p.nom='"+phenotype_selected+"' and a.pvalue_assoc<=0.001"
         sorted_data = pd.read_sql(sql, connection)
 
         sorted_data.drop_duplicates(subset='rs_id_assoc', inplace=True,take_last=True)
         sorted_data["log10"] = -np.log10(sorted_data.pvalue_assoc)               #ADD COLUMN LOG10
         sorted_data = sorted_data.sort(['chromosome', 'pos'])
-        #sorted_sorted_data = sorted_data[sorted_data.log10 >=(-np.log10(float(threshold)))]
-        #sorted_sorted_data.sort(['chromosome', 'pvalue_assoc'],ascending=[True,True])
         sorted_data['even']=np.where(sorted_data['chromosome'] %2==0,sorted_data['log10'] , 'NaN')
         sorted_data["odd"]=np.where(sorted_data['chromosome'] %2!=0,sorted_data['log10'] , 'NaN')
         
-        #h_data = pd.merge(sorted_data,sorted_data, on='rs_id_assoc', how='outer')
         col=['rs_id_assoc', 'chromosome', 'pos', 'pvalue_assoc', 'allele_A', 'allele_B', 'covariates', 'cohort_BB', 'cohort_AA', 'beta_assoc', 'maf']+selection
 
         DF = sorted_data[col]         # select COLUMN OF DATAFRAME TO SAVE IN CSV
@@ -581,7 +549,6 @@ def SGene(request):
 
 
         #JSON
-        #print(sorted_sorted_data)
         sorted_data_json = sorted_data.to_json(orient='records')
         return render(request,'modules/sGene.html',{'username':request.user,'phenotype':phenotype_selected,'graph': graph, 'div1':div1,'pheno': phenotypes_found, 'jsonData':sorted_data_json,'h_data':sorted_data,'gene':g})
 
