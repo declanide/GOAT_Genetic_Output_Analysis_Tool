@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdd213aa-d227-4546-9df2-86ed40b4768b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/biomarqueurs/views.py" afterPath="$PROJECT_DIR$/biomarqueurs/views.py" />
-    </list>
+    <list default="true" id="bdd213aa-d227-4546-9df2-86ed40b4768b" name="Default" comment="" />
     <ignored path="GOAT_Genetic_Ouput_Analysis_Tool.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -57,8 +55,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.62371135">
-              <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7938144">
+              <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
               <folding>
                 <marker date="1455897772000" expanded="true" signature="4317:4566" placeholder="select p.nom... marqueurs" />
                 <marker date="1455897772000" expanded="true" signature="4630:4877" placeholder="select p.nom... marqueurs" />
@@ -532,7 +530,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1455897772000" expanded="true" signature="4317:4566" placeholder="select p.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="4630:4877" placeholder="select p.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="4947:5274" placeholder="select DISTI... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="5344:5666" placeholder="select DISTI... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="12910:13314" placeholder="select disti... assoc" />
+            <marker date="1455897772000" expanded="true" signature="14418:14652" placeholder="select m.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="41760:42178" placeholder="select disti... assoc" />
+            <marker date="1455897772000" expanded="true" signature="46717:47135" placeholder="select disti... assoc" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -540,7 +547,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1455897772000" expanded="true" signature="4317:4566" placeholder="select p.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="4630:4877" placeholder="select p.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="4947:5274" placeholder="select DISTI... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="5344:5666" placeholder="select DISTI... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="12910:13314" placeholder="select disti... assoc" />
+            <marker date="1455897772000" expanded="true" signature="14418:14652" placeholder="select m.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="41760:42178" placeholder="select disti... assoc" />
+            <marker date="1455897772000" expanded="true" signature="46717:47135" placeholder="select disti... assoc" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -839,9 +855,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.62371135">
-          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.7938144">
+          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+          <folding>
+            <marker date="1455897772000" expanded="true" signature="4317:4566" placeholder="select p.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="4630:4877" placeholder="select p.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="4947:5274" placeholder="select DISTI... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="5344:5666" placeholder="select DISTI... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="12910:13314" placeholder="select disti... assoc" />
+            <marker date="1455897772000" expanded="true" signature="14418:14652" placeholder="select m.nom... marqueurs" />
+            <marker date="1455897772000" expanded="true" signature="41760:42178" placeholder="select disti... assoc" />
+            <marker date="1455897772000" expanded="true" signature="46717:47135" placeholder="select disti... assoc" />
+          </folding>
         </state>
       </provider>
     </entry>
