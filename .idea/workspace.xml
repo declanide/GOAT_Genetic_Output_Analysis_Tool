@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdd213aa-d227-4546-9df2-86ed40b4768b" name="Default" comment="" />
+    <list default="true" id="bdd213aa-d227-4546-9df2-86ed40b4768b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="GOAT_Genetic_Ouput_Analysis_Tool.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -52,21 +54,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6436e764-be4b-4335-b337-5b85acd26a35/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.166667">
+              <caret line="49" column="353" selection-start-line="49" selection-start-column="353" selection-end-line="49" selection-end-column="353" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7938144">
-              <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-              <folding>
-                <marker date="1455897772000" expanded="true" signature="4317:4566" placeholder="select p.nom... marqueurs" />
-                <marker date="1455897772000" expanded="true" signature="4630:4877" placeholder="select p.nom... marqueurs" />
-                <marker date="1455897772000" expanded="true" signature="4947:5274" placeholder="select DISTI... marqueurs" />
-                <marker date="1455897772000" expanded="true" signature="5344:5666" placeholder="select DISTI... marqueurs" />
-                <marker date="1455897772000" expanded="true" signature="12910:13314" placeholder="select disti... assoc" />
-                <marker date="1455897772000" expanded="true" signature="14418:14652" placeholder="select m.nom... marqueurs" />
-                <marker date="1455897772000" expanded="true" signature="41760:42178" placeholder="select disti... assoc" />
-                <marker date="1455897772000" expanded="true" signature="46717:47135" placeholder="select disti... assoc" />
-              </folding>
+            <state vertical-scroll-proportion="0.1780822">
+              <caret line="480" column="44" selection-start-line="480" selection-start-column="35" selection-end-line="480" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,10 +99,10 @@
         <option value="$PROJECT_DIR$/biomarqueurs/models.py" />
         <option value="$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/urls.py" />
         <option value="$PROJECT_DIR$/biomarqueurs/templates/modules/sGene.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6436e764-be4b-4335-b337-5b85acd26a35/console.sql" />
         <option value="$PROJECT_DIR$/GOAT_Genetic_Output_Analysis_Tool/settings.py" />
         <option value="$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py" />
         <option value="$PROJECT_DIR$/biomarqueurs/views.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6436e764-be4b-4335-b337-5b85acd26a35/console.sql" />
       </list>
     </option>
   </component>
@@ -111,7 +114,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="726" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -138,7 +141,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -187,6 +189,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -475,29 +478,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="726" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="728" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5904685" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3764321" sideWeight="0.50606304" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.726979" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35081968" sideWeight="0.49393696" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36708862" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35081968" sideWeight="0.49393696" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44680852" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4473684" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -518,6 +521,28 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -530,16 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1455897772000" expanded="true" signature="4317:4566" placeholder="select p.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="4630:4877" placeholder="select p.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="4947:5274" placeholder="select DISTI... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="5344:5666" placeholder="select DISTI... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="12910:13314" placeholder="select disti... assoc" />
-            <marker date="1455897772000" expanded="true" signature="14418:14652" placeholder="select m.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="41760:42178" placeholder="select disti... assoc" />
-            <marker date="1455897772000" expanded="true" signature="46717:47135" placeholder="select disti... assoc" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -547,16 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1455897772000" expanded="true" signature="4317:4566" placeholder="select p.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="4630:4877" placeholder="select p.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="4947:5274" placeholder="select DISTI... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="5344:5666" placeholder="select DISTI... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="12910:13314" placeholder="select disti... assoc" />
-            <marker date="1455897772000" expanded="true" signature="14418:14652" placeholder="select m.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="41760:42178" placeholder="select disti... assoc" />
-            <marker date="1455897772000" expanded="true" signature="46717:47135" placeholder="select disti... assoc" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,13 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6436e764-be4b-4335-b337-5b85acd26a35/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8947368">
-          <caret line="43" column="1590" selection-start-line="43" selection-start-column="1546" selection-end-line="43" selection-end-column="1590" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/biomarqueurs/templates/modules/sGene.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.033783782">
@@ -853,20 +851,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/a4c3b2b0/6436e764-be4b-4335-b337-5b85acd26a35/hits-of-opti-tera.phenotypes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6436e764-be4b-4335-b337-5b85acd26a35/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.166667">
+          <caret line="49" column="353" selection-start-line="49" selection-start-column="353" selection-end-line="49" selection-end-column="353" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/biomarqueurs/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7938144">
-          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-          <folding>
-            <marker date="1455897772000" expanded="true" signature="4317:4566" placeholder="select p.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="4630:4877" placeholder="select p.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="4947:5274" placeholder="select DISTI... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="5344:5666" placeholder="select DISTI... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="12910:13314" placeholder="select disti... assoc" />
-            <marker date="1455897772000" expanded="true" signature="14418:14652" placeholder="select m.nom... marqueurs" />
-            <marker date="1455897772000" expanded="true" signature="41760:42178" placeholder="select disti... assoc" />
-            <marker date="1455897772000" expanded="true" signature="46717:47135" placeholder="select disti... assoc" />
-          </folding>
+        <state vertical-scroll-proportion="0.1780822">
+          <caret line="480" column="44" selection-start-line="480" selection-start-column="35" selection-end-line="480" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
