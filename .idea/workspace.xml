@@ -2,6 +2,116 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdd213aa-d227-4546-9df2-86ed40b4768b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AreaSelection/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AreaSelection/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AreaSelection/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AreaSelection/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AreaSelection/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AreaSelection/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/AreaSelection/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/gulpfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/Routes.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/AreaSelectionPage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Base.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Buttons/Button.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Buttons/HamButton.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Charts/Chart.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Charts/d3Chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/ComponentsData/menuItemsList.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/ComponentsData/modulesList.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/Input.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/InputAutoComplete.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/InputChromosome.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/InputGene.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/InputPhenotype.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/InputPosition.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/InputSNP.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/QueryAreaSelectionForm.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/QueryForm.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Form/QuerySFGForm.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Header/Header.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/HomePage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/ManhattanPage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Menu/Menu.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Menu/MenuItem.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Panels/FormPanel.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Panels/InfoPanel.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/QueryASParamsPage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/QueryParamsPage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/QuerySFGPage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/SnpsForGenePage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/TablePage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Tables/ASTable.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Tables/PhenotypesTable.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/Tables/Table.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/components/TestPage.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/main.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/AreaSelectionActions.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/AreaSelectionStore.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/ManhattanActions.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/ManhattanStore.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/PhenotypesActions.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/PhenotypesStore.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/SnpActions.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/SnpStore.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/SnpsForGeneActions.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/front_end/src/reflux/SnpsForGeneStore.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/settings.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GOAT/wsgi.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetPhenotypes/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetPhenotypes/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetPhenotypes/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetPhenotypes/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetPhenotypes/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetPhenotypes/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/GetPhenotypes/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tools/UserLogs.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tools/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tools/connect.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tools/getPhenotypes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UserAccess.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Vision-Goat-1.0.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/templates/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/templates/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/autocomplete/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/autocomplete/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/autocomplete/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/autocomplete/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/autocomplete/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/autocomplete/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/autocomplete/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bokeh_GOAT/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bokeh_GOAT/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bokeh_GOAT/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bokeh_GOAT/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bokeh_GOAT/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bokeh_GOAT/templates/plot.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bokeh_GOAT/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bokeh_GOAT/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/debug.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/manage.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phenoComparison/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phenoComparison/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phenoComparison/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phenoComparison/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phenoComparison/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phenoComparison/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/phenoComparison/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plot.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GOAT_Genetic_Ouput_Analysis_Tool.iws" />
@@ -43,21 +153,7 @@
     <favorites_list name="GOAT_Genetic_Ouput_Analysis_Tool" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bokeh_GOAT/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3613014">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <marker date="1458064706000" expanded="true" signature="2313:2722" placeholder="select disti... assoc" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,6 +182,8 @@
         <option value="$PROJECT_DIR$/GOAT_Genetic_Ouput_Analysis_Tool/settings.py" />
         <option value="$PROJECT_DIR$/biomarqueurs/views.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6436e764-be4b-4335-b337-5b85acd26a35/console.sql" />
+        <option value="$PROJECT_DIR$/GOAT/secrets/databases.py" />
+        <option value="$PROJECT_DIR$/GOAT/settings.py" />
       </list>
     </option>
   </component>
@@ -97,7 +195,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="728" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -124,7 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -133,32 +230,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GOAT_Genetic_Ouput_Analysis_Tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GOAT_Genetic_Output_Analysis_Tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GOAT_Genetic_Ouput_Analysis_Tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GOAT_Genetic_Output_Analysis_Tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bokeh_GOAT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -167,9 +241,10 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/GOAT_Genetic_Ouput_Analysis_Tool" />
     <property name="dynamic.classpath" value="false" />
     <property name="SearchEverywhereHistoryKey" value="biomarqueurs.views.logoutUser&#9;null&#9;null&#10;{% url &quot;biomarqueurs.views.logoutUser&quot;%}&#9;null&#9;null" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -447,29 +522,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="728" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="726" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5904685" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5904685" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3764321" sideWeight="0.50606304" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.726979" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35032895" sideWeight="0.49393696" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36708862" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35081968" sideWeight="0.49393696" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44590163" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -518,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25167784">
-          <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/471a4e09-7e1e-4585-8381-79eda51c34d3/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34188035">
@@ -533,50 +601,50 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a4c3b2b0/6436e764-be4b-4335-b337-5b85acd26a35/hits-of-opti-tera.phenotypes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a4c3b2b0/6436e764-be4b-4335-b337-5b85acd26a35/hits-of-opti-tera.assoc">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a4c3b2b0/6436e764-be4b-4335-b337-5b85acd26a35/hits-of-opti-tera.hg_rs_history">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/a4c3b2b0/6436e764-be4b-4335-b337-5b85acd26a35/hits-of-opti-tera.marqueurs">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -584,30 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74285716">
           <caret line="54" column="135" selection-start-line="54" selection-start-column="135" selection-end-line="54" selection-end-column="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AreaSelection/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.4982877">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1458064706000" expanded="true" signature="919:1358" placeholder="select disti... assoc" />
-            <marker date="1458064706000" expanded="true" signature="16640:17044" placeholder="select disti... assoc" />
-            <marker date="1458064706000" expanded="true" signature="18127:18354" placeholder="select m.nom... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bokeh_GOAT/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3613014">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1458064706000" expanded="true" signature="2313:2722" placeholder="select disti... assoc" />
-          </folding>
         </state>
       </provider>
     </entry>
